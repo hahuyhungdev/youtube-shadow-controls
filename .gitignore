@@ -1,0 +1,10 @@
+# Node dependencies recursively
+**/node_modules/
+npm-debug.log*
+
+# Scratch/user-data/screenshots recursively
+**/scratch/
+
+# OS metadata
+.DS_Store
+Thumbs.db

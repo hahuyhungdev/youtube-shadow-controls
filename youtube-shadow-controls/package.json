@@ -1,0 +1,9 @@
+{
+  "name": "youtube-shortcut-control",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-exclude=src/content.js --test-coverage-exclude=src/ui/toast.js --test-coverage-lines=80 --test-coverage-functions=80"
+  }
+}

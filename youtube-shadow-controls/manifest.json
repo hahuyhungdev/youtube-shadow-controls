@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Shadow Controls",
+  "version": "2.0.0",
+  "description": "Keyboard-first YouTube controls for replay, speed, looping, and language shadowing practice.",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "Shadow Controls",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://m.youtube.com/*"
+      ],
+      "js": [
+        "src/settings.js",
+        "src/player.js",
+        "src/shortcuts.js",
+        "src/loop-controller.js",
+        "src/ui/toast.js",
+        "src/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}

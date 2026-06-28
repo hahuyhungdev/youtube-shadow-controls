@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shadow Controls</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">YouTube practice tool</p>
+          <h1>Shadow<br><span>Controls</span></h1>
+        </div>
+        <label class="power" title="Enable extension">
+          <input id="enabled" type="checkbox">
+          <span aria-hidden="true"></span>
+          <span class="sr-only">Enable extension</span>
+        </label>
+      </header>
+
+      <section class="quick-reference" aria-labelledby="shortcuts-title">
+        <div class="section-heading">
+          <h2 id="shortcuts-title">Practice keys</h2>
+          <span id="save-status" role="status" aria-live="polite">Ready</span>
+        </div>
+        <div class="key-grid">
+          <div><kbd>←</kbd><span>Back</span></div>
+          <div><kbd>↓</kbd><span>Pause</span></div>
+          <div><kbd>↑</kbd><span>Replay</span></div>
+          <div><kbd>→</kbd><span>Forward</span></div>
+        </div>
+        <p class="shortcut-note"><kbd>[</kbd> A point&nbsp;&nbsp; <kbd>]</kbd> B point&nbsp;&nbsp; <kbd>\</kbd> loop</p>
+      </section>
+
+      <form id="settings-form">
+        <section class="settings-section" aria-labelledby="timing-title">
+          <h2 id="timing-title">Timing</h2>
+          <div class="field-pair">
+            <label>
+              <span>Seek</span>
+              <span class="number-control"><input id="seekSeconds" type="number" min="1" max="10" step="1"><b>s</b></span>
+            </label>
+            <label>
+              <span>Replay</span>
+              <span class="number-control"><input id="replaySeconds" type="number" min="1" max="15" step="1"><b>s</b></span>
+            </label>
+          </div>
+          <label class="row-field" for="speedStep">
+            <span>Speed step</span>
+            <select id="speedStep">
+              <option value="0.05">0.05x</option>
+              <option value="0.1">0.10x</option>
+              <option value="0.25">0.25x</option>
+            </select>
+          </label>
+          <label class="row-field" for="loopRestSeconds">
+            <span>Loop rest</span>
+            <select id="loopRestSeconds">
+              <option value="0">No pause</option>
+              <option value="0.5">0.5 seconds</option>
+              <option value="1">1 second</option>
+              <option value="2">2 seconds</option>
+              <option value="3">3 seconds</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="settings-section" aria-labelledby="feedback-title">
+          <div class="section-heading">
+            <h2 id="feedback-title">Feedback</h2>
+            <label class="mini-toggle">
+              <input id="toastEnabled" type="checkbox">
+              <span aria-hidden="true"></span>
+              <span class="sr-only">Show action notifications</span>
+            </label>
+          </div>
+          <div class="field-pair">
+            <label>
+              <span>Size</span>
+              <select id="toastSize"><option value="compact">Compact</option><option value="large">Large</option></select>
+            </label>
+            <label>
+              <span>Position</span>
+              <select id="toastPosition"><option value="top">Top</option><option value="center">Center</option><option value="bottom">Bottom</option></select>
+            </label>
+          </div>
+          <label class="duration-field" for="toastDurationMs">
+            <span>Toast duration <output id="duration-output">0.85s</output></span>
+            <input id="toastDurationMs" type="range" min="400" max="2000" step="50">
+          </label>
+        </section>
+
+        <button id="reset-button" class="reset-button" type="button">Reset to defaults</button>
+      </form>
+    </main>
+    <script src="../src/settings.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
